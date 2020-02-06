@@ -7,6 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/fontawesome.min.css" rel="stylesheet" > -->
+
 <style>
 
 .cont {
@@ -54,10 +56,13 @@
 <div class="container">
     <div class="row justify-content-around">
 
-        <div class="card col-3" style="width: 18rem;">
+        <div class="card col-md-3 col-sm-8 my-1" style="width: 18rem;">
             <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
             <div class="card-body">
-              <h5 class="card-title">Register a Hotel </h5>
+              <h5 class="card-title"><i class="fas fa-building"></i>
+
+                Register a Hotel </h5>
+              
               <p class="card-text">Enter your new hotel details.</p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Create
@@ -71,7 +76,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">
-            Fill in the text fields</h5>
+            Create your hotels</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -83,7 +88,7 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="inputGroup-sizing-sm-hotelName">Hotel Name</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="hotelNameInput">
+                        <input type="text" class="form-control" aria-label="hotelName" aria-describedby="inputGroup-sizing-sm" id="hotelNameInput">
                       </div>
                 </div>
               </div>
@@ -94,18 +99,39 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="inputGroup-sizing-sm-rooms">Rooms</span>
                         </div>
-                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="roomsInput">
+                        <input type="text" class="form-control" aria-label="hotelRooms" aria-describedby="inputGroup-sizing-sm" id="roomsInput">
                       </div>
                 </div>
               </div>
 
-        
+              <div class="row justify-content-around">
+                <div class="col-10">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-sm-floors">Floors</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="floorsHotel" aria-describedby="inputGroup-sizing-sm" id="floorsInput">
+                      </div>
+                </div>
+              </div>
+
+              <div class="row justify-content-around">
+                <div class="col-10">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-sm-area">Total area</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="hotelArea" aria-describedby="inputGroup-sizing-sm" id="areaInput">
+                      </div>
+                </div>
+              </div>
+
 
     
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" onclick="myFunction()">Save changes</button>
+          <button type="button" class="btn btn-primary" onclick="createHotel()">Save changes</button>
         </div>
       </div>
     </div>
@@ -113,21 +139,21 @@
             </div>
           </div>
 
-          <div class="card col-3" style="width: 18rem;">
+          <div class="card col-md-3 col-sm-8 my-1" style="width: 18rem;">
             <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
             <div class="card-body">
-              <h5 class="card-title">View a Hotel</h5>
+              <h5 class="card-title"><i class="fas fa-book"></i>View a Hotel</h5>
               <p class="card-text">
                 Check the data of your hotels</p>
               <a href="#" class="btn btn-primary">Check</a>
             </div>
           </div>
 
-          <div class="card col-3" style="width: 18rem;">
+          <div class="card col-md-3 col-sm-8 my-1" style="width: 18rem;">
             <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
             <div class="card-body">
-              <h5 class="card-title">Edit or Remove a Hotel</h5>
-              <p class="card-text"></p>
+              <h5 class="card-title"><i class="fas fa-edit"></i>Edit a Hotel</h5>
+              <p class="card-text">Edit any data of your hotel. Or remove it.</p>
               <a href="#" class="btn btn-primary">Edit</a>
             </div>
           </div>
@@ -147,5 +173,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="hotel.js"></script>
   </body>
 </html>
