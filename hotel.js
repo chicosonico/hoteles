@@ -1,45 +1,59 @@
 
 hotelList = [];
 
-class Hotel {
+ class Hotel {
     constructor(name, room, floor, area) {
-      this.name = name;
-      this.room = room;
-      this.floor = floor;
-      this.area = area;
+      this._name = name;
+      this._room = room;
+      this._floor = floor;
+      this._area = area;
     }
 
     get getName() {
-        return this.name;
+        return this._name;
     }
     get getRoom() {
-        return this.room;
+        return this._room;
     }
     get getFloor() {
-        return this.floor;
+        return this._floor;
     }
     get getArea() {
-        return this.area;
+        return this._area;
     }
 
    
 
-    set setName(x) {
-        this.name = x;
+    set setName(editName) {
+        this.name = editName;
       }
 
-    set setRoom(x) {
-        this.room = x;
+    set setRoom(editRoom) {
+        this.room = editRoom;
       }
 
-    set setFloor(x) {
-        this.floor = x;
+    set setFloor(editFloor) {
+        this.floor = editFloor;
       }
 
-    set setArea(x) {
-        this.area = x;
+    set setArea(editArea) {
+        this.area = editArea;
       }  
 
+      
+      calMaintenance(){
+        let workers = 0;
+
+        if(this._room <= 20){
+          workers = 1;
+          cost = 1500;
+          return cost;
+        }else{
+          workers = this._room /20;
+          cost = workers * 1500; 
+          return cost;     
+        }
+      }
   }
 
   function createHotel(){
@@ -55,3 +69,22 @@ class Hotel {
    console.log(hotelList);
 
   }
+
+  function getHotel(){
+    let nameSearch = document.getElementById("hotelNameSearch").value;
+    var exist=false;
+    for (i=0; i <= hotelList.length; i++) {
+        if(nameSearch == hotelList[i].getName){
+          console.log("Hola");
+            exist = true;
+            console.log(exist);
+            document.getElementById("viewRooms").innerHTML = hotelList[i].getRoom  ;
+            document.getElementById("viewFloors").innerHTML = hotelList[i].getFloor ;
+            document.getElementById("viewArea").innerHTML = hotelList[i].getArea;
+            document.getElementById("viewMaintenance").innerHTML = hotelList[i].calMaintenance().value;
+
+      
+        }
+    } 
+   
+}
