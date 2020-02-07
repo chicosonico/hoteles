@@ -69,17 +69,17 @@ hotelList = [];
 
    hotelList.push(newHotel);
    console.log(hotelList);
+   $(':input').val('');
 
   }
 
   function getHotel(){
     let nameSearch = document.getElementById("hotelNameSearch").value;
-    var exist=false;
+    
     for (i=0; i <= hotelList.length; i++) {
         if(nameSearch == hotelList[i].getName){
-          console.log("Hola");
-            exist = true;
-            console.log(exist);
+            
+            document.getElementById("viewHotel").innerHTML = hotelList[i].getName  ;
             document.getElementById("viewRooms").innerHTML = hotelList[i].getRoom  ;
             document.getElementById("viewFloors").innerHTML = hotelList[i].getFloor ;
             document.getElementById("viewArea").innerHTML = hotelList[i].getArea;
@@ -87,7 +87,7 @@ hotelList = [];
             hotelList[i].calMaintenance() + "€ per month." ;
             // document.getElementById("viewMaintenance").innerHTML = "This hotel needs "+ hotelList[i].calMaintenance().value.workers + "workers, with a cost of " + 
             // hotelList[i].calMaintenance().value.cost + "€.";
-      
+            $(':input').val('');
         }
     } 
    

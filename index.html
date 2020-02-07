@@ -138,7 +138,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" onclick="createHotel()">Save</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="createHotel()">Save</button>
                 </div>
               </div>
             </div>
@@ -175,11 +175,16 @@
                       <div class="col-10">
                         <div class="input-group input-group-sm mb-3">
                           <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm-hotelName">Hotel Name</span>
+                            <span class="input-group-text" id="inputGroup-sizing-sm-hotelName">Search Hotel</span>
                           </div>
                           <input type="text" class="form-control" aria-label="hotelName"
                             aria-describedby="inputGroup-sizing-sm" id="hotelNameSearch">
                         </div>
+                      </div>
+                    </div>
+                    <div class="row justify-content-around">
+                      <div class="col-10">
+                        Hotel: <span id="viewHotel"></span>
                       </div>
                     </div>
   
