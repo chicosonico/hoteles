@@ -51,7 +51,7 @@ hotelList = [];
           return cost;
           
         }else{
-          workers = roomCost /20;
+          workers = Math.ceil(roomCost /20);
           cost = workers * 1500; 
           return cost;
         }
@@ -91,4 +91,17 @@ hotelList = [];
         }
     } 
    
+}
+
+function deleteHotel(){
+  let nameEdit = document.getElementById("hotelNameEdit").value;
+
+  for (i=0; i <= hotelList.length; i++) {
+    if(nameEdit == hotelList[i].getName){
+      hotelList.splice[i];
+        console.log(hotelList);
+        $(':input').val('');
+    }
+} 
+
 }

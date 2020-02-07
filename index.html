@@ -48,12 +48,7 @@
 
 
   </header>
-  <!-- <header class="bg-primary text-white">
-        <div class="container text-center">
-            <h1>Manage your hotels</h1>
-          
-        </div>
-      </header> -->
+
 
   <div class="container">
     <div class="row justify-content-around">
@@ -153,7 +148,7 @@
           <p class="card-text">
             Check the data of your hotels</p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#viewHotelModal">
-              Create
+              View
             </button>
             <!-- Button trigger modal -->
   
@@ -230,7 +225,84 @@
         <div class="card-body">
           <h5 class="card-title"><i class="fas fa-edit"></i>Edit a Hotel</h5>
           <p class="card-text">Edit any data of your hotel. Or remove it.</p>
-          <a href="#" class="btn btn-primary">Edit</a>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editHotelModal">
+            Edit
+          </button>
+          <!-- Button trigger modal -->
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="editHotelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editHotelModalLabel">
+                    Edit your hotels</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body container">
+                  <div class="row justify-content-around">
+                    <div class="col-10">
+                      <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-sm-hotelName">Search Hotel</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="hotelName"
+                          aria-describedby="inputGroup-sizing-sm" id="hotelNameEdit">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-around">
+                    <div class="col-10">
+                      <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-sm-rooms">Rooms</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="hotelRooms"
+                          aria-describedby="inputGroup-sizing-sm" id="roomsInput">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-around">
+                    <div class="col-10">
+                      <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-sm-floors">Floors</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="floorsHotel"
+                          aria-describedby="inputGroup-sizing-sm" id="floorsInput">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-around">
+                    <div class="col-10">
+                      <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroup-sizing-sm-area">Total area</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="hotelArea"
+                          aria-describedby="inputGroup-sizing-sm" id="areaInput">
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="deleteHotel()">Delete Hotel</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="createHotel()">Edit</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
