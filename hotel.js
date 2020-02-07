@@ -42,14 +42,16 @@ hotelList = [];
 
       
       calMaintenance(){
-        let workers = 0;
+        var roomsCost = parseInt(this._room);
+        var workers = 0;
 
-        if(this._room <= 20){
+        if(roomsCost <= 20){
           workers = 1;
-          cost = 1500;
+          var cost = 1500;
           return cost;
         }else{
-          workers = this._room /20;
+          workers = roomsCost/20;
+          console.log(workers);
           cost = workers * 1500; 
           return cost;     
         }
@@ -81,7 +83,7 @@ hotelList = [];
             document.getElementById("viewRooms").innerHTML = hotelList[i].getRoom  ;
             document.getElementById("viewFloors").innerHTML = hotelList[i].getFloor ;
             document.getElementById("viewArea").innerHTML = hotelList[i].getArea;
-            document.getElementById("viewMaintenance").innerHTML = hotelList[i].calMaintenance().value;
+            document.getElementById("viewMaintenance").innerHTML = hotelList[i].calMaintenance();
 
       
         }
