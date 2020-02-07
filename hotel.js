@@ -94,11 +94,11 @@ hotelList = [];
 }
 
 function deleteHotel(){
-  let nameEdit = document.getElementById("hotelNameEdit").value;
+  var nameEdit = document.getElementById("hotelNameEdit").value;
 
   for (i=0; i <= hotelList.length; i++) {
     if(nameEdit == hotelList[i].getName){
-      hotelList.splice[i];
+      hotelList.splice(i);
         console.log(hotelList);
         $(':input').val('');
     }
