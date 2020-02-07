@@ -1,5 +1,5 @@
 
-hotelList = [];
+hotelList = []; 
 
  class Hotel {
     constructor(name, room, floor, area) {
@@ -51,7 +51,7 @@ hotelList = [];
           return cost;
           
         }else{
-          workers = Math.ceil(roomCost /20);
+          workers = Math.ceil(roomCost /20);// match workers to rooms
           cost = workers * 1500; 
           return cost;
         }
@@ -69,14 +69,14 @@ hotelList = [];
 
    hotelList.push(newHotel);
    console.log(hotelList);
-   $(':input').val('');
+   $(':input').val(''); // clean input fields from bootstrap modal
 
   }
 
   function getHotel(){
     let nameSearch = document.getElementById("hotelNameSearch").value;
     
-    for (i=0; i <= hotelList.length; i++) {
+    for (i=0; i < hotelList.length; i++) {
         if(nameSearch == hotelList[i].getName){
             
             document.getElementById("viewHotel").innerHTML = hotelList[i].getName  ;
@@ -87,7 +87,7 @@ hotelList = [];
             hotelList[i].calMaintenance() + "€ per month." ;
             // document.getElementById("viewMaintenance").innerHTML = "This hotel needs "+ hotelList[i].calMaintenance().value.workers + "workers, with a cost of " + 
             // hotelList[i].calMaintenance().value.cost + "€.";
-            $(':input').val('');
+            $(':input').val(''); // clean input fields from bootstrap modal
         }
     } 
    
@@ -100,7 +100,7 @@ function deleteHotel(){
     if(nameEdit == hotelList[i].getName){
       hotelList.splice(i);
         console.log(hotelList);
-        $(':input').val('');
+        $(':input').val('');// clean input fields from bootstrap modal
     }
 } 
 
