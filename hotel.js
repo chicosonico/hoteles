@@ -42,18 +42,18 @@ hotelList = [];
 
       
       calMaintenance(){
-        var roomsCost = parseInt(this._room);
         var workers = 0;
-
-        if(roomsCost <= 20){
+        var roomCost = parseInt(this._room);
+        var cost;
+        if(roomCost <= 20){
           workers = 1;
-          var cost = 1500;
+          cost = 1500;
           return cost;
+          
         }else{
-          workers = roomsCost/20;
-          console.log(workers);
+          workers = roomCost /20;
           cost = workers * 1500; 
-          return cost;     
+          return cost;
         }
       }
   }
@@ -83,8 +83,10 @@ hotelList = [];
             document.getElementById("viewRooms").innerHTML = hotelList[i].getRoom  ;
             document.getElementById("viewFloors").innerHTML = hotelList[i].getFloor ;
             document.getElementById("viewArea").innerHTML = hotelList[i].getArea;
-            document.getElementById("viewMaintenance").innerHTML = hotelList[i].calMaintenance();
-
+            document.getElementById("viewMaintenance").innerHTML = "This hotel needs a maintenance of " + 
+            hotelList[i].calMaintenance() + "€ per month." ;
+            // document.getElementById("viewMaintenance").innerHTML = "This hotel needs "+ hotelList[i].calMaintenance().value.workers + "workers, with a cost of " + 
+            // hotelList[i].calMaintenance().value.cost + "€.";
       
         }
     } 
