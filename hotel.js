@@ -25,19 +25,19 @@ hotelList = [];
    
 
     set setName(editName) {
-        this.name = editName;
+        this._name = editName;
       }
 
     set setRoom(editRoom) {
-        this.room = editRoom;
+        this._room = editRoom;
       }
 
     set setFloor(editFloor) {
-        this.floor = editFloor;
+        this._floor = editFloor;
       }
 
     set setArea(editArea) {
-        this.area = editArea;
+        this._area = editArea;
       }  
 
       
@@ -103,5 +103,24 @@ function deleteHotel(){
         $(':input').val('');// clean input fields from bootstrap modal
     }
 } 
+
+}
+
+function editHotel(){
+
+  let nameSearch = document.getElementById("editHotel").value;
+    
+    for (i=0; i < hotelList.length; i++) {
+        if(nameSearch == hotelList[i].getName){
+            
+            // document.getElementById("editHotel").innerHTML = hotelList[i].setName  ;
+            hotelList[i].setRoom = document.getElementById("editRooms").value;
+            hotelList[i].setFloor = document.getElementById("editFloors").value ;
+            hotelList[i].setArea = document.getElementById("editArea").value ;
+            
+            $(':input').val(''); // clean input fields from bootstrap modal
+            console.log(hotelList);
+        }
+    } 
 
 }
