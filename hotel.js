@@ -1,5 +1,6 @@
 
 hotelList = []; 
+var numbers = /^[0-9]+$/;
 
  class Hotel {
     constructor(name, room, floor, area) {
@@ -58,6 +59,8 @@ hotelList = [];
       }
   }
 
+
+
   function createHotel(){
 
    let nameInput = document.getElementById("hotelNameInput").value;
@@ -65,17 +68,26 @@ hotelList = [];
    let floorsInput = document.getElementById("floorsInput").value;
    let areaInput = document.getElementById("areaInput").value;
 
-   newHotel = new Hotel(nameInput, roomsInput, floorsInput, areaInput);
+   if(roomsInput.match(numbers) && floorsInput.match(numbers) && areaInput.match(numbers)){
+    nameInput = nameInput.toUpperCase();
 
-   hotelList.push(newHotel);
-   console.log(hotelList);
-   $(':input').val(''); // clean input fields from bootstrap modal
+    newHotel = new Hotel(nameInput, roomsInput, floorsInput, areaInput);
+ 
+    hotelList.push(newHotel);
+    console.log(hotelList);
+    $(':input').val(''); // clean input fields from bootstrap modal
+
+   }else{
+    alert('Please input numeric characters only at Rooms, Floors and Area fields');
+   }
+       
 
   }
 
   function getHotel(){
     let nameSearch = document.getElementById("hotelNameSearch").value;
-    
+    nameSearch = nameSearch.toUpperCase();
+   
     for (i=0; i < hotelList.length; i++) {
         if(nameSearch == hotelList[i].getName){
             
@@ -95,6 +107,7 @@ hotelList = [];
 
 function deleteHotel(){
   var nameEdit = document.getElementById("hotelNameEdit").value;
+  nameEdit = nameEdit.toUpperCase();
 
   for (i=0; i <= hotelList.length; i++) {
     if(nameEdit == hotelList[i].getName){
@@ -108,18 +121,29 @@ function deleteHotel(){
 
 function editHotel(){
 
-  let nameSearch = document.getElementById("hotelNameEdit").value;
-    
+  let nameEdit = document.getElementById("hotelNameEdit").value;
+  nameEdit = nameEdit.toUpperCase();
+  
     for (i=0; i < hotelList.length; i++) {
-        if(nameSearch == hotelList[i].getName){
-            
-          // hotelList[i].setName = document.getElementById("viewHotel").value  ;
+        if(nameEdit == hotelList[i].getName){
+          if (document.getElementById("editRooms").value == ""){//validate empty fields to avoid overwrite right values
+
+          }else{
           hotelList[i].setRoom = document.getElementById("editRooms").value  ;
-          hotelList[i].setFloor = document.getElementById("editFloors").value ;
-          hotelList[i].setArea = document.getElementById("editArea").value;
+          }
+
+          if(document.getElementById("editFloors").value == ""){
+
+          }else{
+            hotelList[i].setFloor = document.getElementById("editFloors").value ;
+          }
+          if(document.getElementById("editArea").value == ""){
+
+          }else{
+            hotelList[i].setArea = document.getElementById("editArea").value;
+          }
+          
             
-            // document.getElementById("viewMaintenance").innerHTML = "This hotel needs "+ hotelList[i].calMaintenance().value.workers + "workers, with a cost of " + 
-            // hotelList[i].calMaintenance().value.cost + "€.";
             $(':input').val(''); // clean input fields from bootstrap modal
             console.log(hotelList);
         }
