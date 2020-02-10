@@ -108,7 +108,7 @@ var numbers = /^[0-9]+$/;
 function deleteHotel(){
   var nameEdit = document.getElementById("hotelNameEdit").value;
   nameEdit = nameEdit.toUpperCase();
-
+// better do while -- faster
   for (i=0; i <= hotelList.length; i++) {
     if(nameEdit == hotelList[i].getName){
       hotelList.splice(i);
@@ -116,6 +116,8 @@ function deleteHotel(){
         $(':input').val('');// clean input fields from bootstrap modal
     }
 } 
+
+
 
 }
 
