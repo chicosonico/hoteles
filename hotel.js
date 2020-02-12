@@ -113,7 +113,7 @@ function editHotel(){
     for (i=0; i < hotelList.length; i++) {
         if(nameSearch == hotelList[i].getName){
             
-            // document.getElementById("editHotel").innerHTML = hotelList[i].setName  ;
+            // hotelList[i].setName = document.getElementById("editHotel").value;
             hotelList[i].setRoom = document.getElementById("editRooms").value;
             hotelList[i].setFloor = document.getElementById("editFloors").value ;
             hotelList[i].setArea = document.getElementById("editArea").value ;
