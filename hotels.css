@@ -1,0 +1,22 @@
+
+.empty{
+  height: 350px;
+}
+
+.cont {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.blur {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
